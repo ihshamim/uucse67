@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UU CSE 67 E - Uttara University</title>
+    
+    <!-- Advanced SEO & Meta Tags -->
+    <meta name="description" content="Welcome to the Official Academic Portal for Uttara University CSE 67th Evening Batch. Access student details, faculty info, class routines, and special notices all in one place.">
+    <meta name="keywords" content="UU CSE, Uttara University, CSE 67th Batch, Evening Batch, Academic Portal, AppSheet, B.Sc in CSE, Student Portal, UU CSE 67E">
+    <meta name="author" content="Shamim - 1123 (IH Shamim)">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UU CSE 67 E Portal">
+    <meta property="og:title" content="UU CSE 67 E - Official Academic Portal">
+    <meta property="og:description" content="The centralized academic hub for the students of Uttara University CSE 67th Evening Batch. Check your routines, results, and courses seamlessly.">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieD9-5CaXiCD_Gaj7xGth2lYEI9RPBkZvF9WnE7rDzi0vXrvOOXHfkYFWDtvgwnHZ8wW60dlICJRb0WZGKv-pTLPlzBgZ2gHxHTx9NqU4sme4IoRPZMaaHyxa4p-XffSIdSLWPUp2behIWnMtkVCeNoA8KwY-KcT9BtH-dyNRPF45rJPMEdMFEt3WhHxI/s320/Untitled-1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UU CSE 67 E - Official Academic Portal">
+    <meta name="twitter:description" content="The centralized academic hub for the students of Uttara University CSE 67th Evening Batch. Check your routines, results, and courses seamlessly.">
+    <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieD9-5CaXiCD_Gaj7xGth2lYEI9RPBkZvF9WnE7rDzi0vXrvOOXHfkYFWDtvgwnHZ8wW60dlICJRb0WZGKv-pTLPlzBgZ2gHxHTx9NqU4sme4IoRPZMaaHyxa4p-XffSIdSLWPUp2behIWnMtkVCeNoA8KwY-KcT9BtH-dyNRPF45rJPMEdMFEt3WhHxI/s320/Untitled-1.png">
+
+    <!-- Favicon -->
+    <link class="rounded-full" rel="icon" type="image/png" href="https://erp.uttarauniversity.edu.bd/temp/assets/img/header_logo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Added Hind Siliguri for Bangla -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Deep Blue
+                        secondary: '#3b82f6', // Light Blue
+                        accent: '#fbbf24', // Yellow/Gold
+                        darkBg: '#0f172a', // Deep slate for dark mode
+                        darkCard: 'rgba(30, 41, 59, 0.7)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Light/Dark mode fluid background transitions */
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        /* Premium Mesh/Dot Background for Light Mode */
+        .bg-mesh-light {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(228,100%,74%,0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355,100%,93%,0.1) 0px, transparent 50%),
+                radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+        }
+
+        /* Premium Mesh/Dot Background for Dark Mode */
+        .dark .bg-mesh-dark {
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(228,80%,20%,0.25) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,85%,25%,0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355,75%,15%,0.15) 0px, transparent 50%),
+                radial-gradient(#334155 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+        }
+        
+        /* Animated Gradient Text */
+        @keyframes gradientX {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-gradient-text {
+            background-size: 200% 200%;
+            animation: gradientX 5s ease infinite;
+        }
+
+        /* Premium Card Hover Effect - Ultra Neo-Glass */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85); /* Replaced expensive backdrop-filter with opacity */
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            will-change: transform;
+        }
+        /* Glossy shine sweep effect */
+        .glass-card::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+            transform: skewX(-20deg); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1;
+        }
+        .glass-card:hover::before { left: 150%; }
+        
+        .glass-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        .dark .glass-card::before { background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent); }
+        .dark .glass-card:hover {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        /* 3D Icon Pop Physics */
+        .icon-bounce {
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 2;
+        }
+        .glass-card:hover .icon-bounce {
+            transform: scale(1.3) translateY(-4px) rotate(6deg);
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+        }
+        
+        /* Premium Button Glow */
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: inherit;
+            filter: blur(12px);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            border-radius: inherit;
+        }
+        .btn-glow:hover::after {
+            opacity: 0.7;
+        }
+
+        /* Continuous Shimmer Effect for Highlight */
+        @keyframes shimmer {
+            0% { transform: translateX(-150%) skewX(-20deg); }
+            100% { transform: translateX(150%) skewX(-20deg); }
+        }
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 40%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: shimmer 3.5s infinite linear;
+        }
+
+        /* Pulsing Border Effect */
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .btn-outline-pulse {
+            animation: borderPulse 2.5s infinite;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.5s ease;
+        }
+
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Device Mockup & Glare */
+        .device-frame {
+            background: #15171e;
+            box-shadow: 
+                inset 0 0 0 2px #3f414d,
+                inset 0 0 0 6px #15171e,
+                0 35px 60px -15px rgba(30, 58, 138, 0.4), 
+                0 0 40px rgba(59, 130, 246, 0.2);
+            transition: box-shadow 0.5s ease;
+            position: relative;
+        }
+        
+        /* Device Glare Reflection */
+        .device-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.01) 35%, transparent 40%);
+            z-index: 30;
+        }
+
+        .dark .device-frame {
+            box-shadow: 
+                inset 0 0 0 2px #1e293b,
+                inset 0 0 0 6px #0b0f19,
+                0 35px 60px -15px rgba(0, 0, 0, 0.6), 
+                0 0 40px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Prevent Horizontal Scroll Globally */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; border: 2px solid #f8fafc; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; border: 2px solid #0f172a; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Fade Up Entrance */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); filter: blur(4px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        /* Extended Delays for Cascading Effects */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+        .delay-700 { animation-delay: 700ms; }
+        .delay-800 { animation-delay: 800ms; }
+        .delay-900 { animation-delay: 900ms; }
+        .delay-1000 { animation-delay: 1000ms; }
+        .delay-1100 { animation-delay: 1100ms; }
+        .delay-1200 { animation-delay: 1200ms; }
+
+        /* Floating / Pulsing Blob */
+        @keyframes blobBounce {
+            0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) scale(1.03) rotate(3deg); }
+        }
+        .animate-blob {
+            animation: blobBounce 12s infinite ease-in-out;
+            will-change: transform;
+        }
+
+        /* Abstract Drifting Orbs */
+        @keyframes drift {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(20px, -30px) scale(1.05); }
+            66% { transform: translate(-15px, 15px) scale(0.95); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-drift {
+            animation: drift 15s infinite alternate ease-in-out;
+            will-change: transform;
+        }
+        .animate-drift-slow {
+            animation: drift 20s infinite alternate-reverse ease-in-out;
+            will-change: transform;
+        }
+
+        /* Dynamic Island Breathing Dot */
+        @keyframes lensBreathe {
+            0%, 100% { opacity: 0.3; box-shadow: 0 0 0px rgba(59,130,246,0); }
+            50% { opacity: 1; box-shadow: 0 0 8px rgba(59,130,246,0.8); }
+        }
+        .animate-lens {
+            animation: lensBreathe 3s infinite ease-in-out;
+        }
+
+        /* Preloader Animations */
+        @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes loadBar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-spin-slow { animation: spin-slow 3s linear infinite; }
+        .animate-spin-reverse { animation: spin-slow 2s linear infinite reverse; }
+        .animate-load-bar { animation: loadBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .logo-glow { filter: drop-shadow(0 0 15px rgba(59,130,246,0.4)); transition: all 0.3s ease; }
+
+        /* Bangla Font Override (Icons Excluded) */
+        .font-bangla, .font-bangla *:not(i) {
+            font-family: 'Hind Siliguri', sans-serif !important;
+        }
+    </style>
+</head>
+<body class="bg-mesh-light bg-mesh-dark text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Premium Preloader / Splash Screen -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl flex flex-col items-center justify-center transition-all duration-700">
+        
+        <!-- Animated Rings & Logo -->
+        <div class="relative flex justify-center items-center mb-8">
+            <div class="absolute w-28 h-28 border-[3px] border-t-blue-500 border-r-transparent border-b-indigo-500 border-l-transparent rounded-full animate-spin-slow opacity-80"></div>
+            <div class="absolute w-20 h-20 border-[3px] border-t-transparent border-r-cyan-400 border-b-transparent border-l-purple-500 rounded-full animate-spin-reverse opacity-70"></div>
+            
+            <div class="bg-white dark:bg-slate-800 w-14 h-14 rounded-full flex items-center justify-center shadow-lg relative z-10 logo-glow">
+                <img src="https://erp.uttarauniversity.edu.bd/temp/assets/img/header_logo.png" alt="UU Logo" class="h-8 w-auto object-contain">
+            </div>
+        </div>
+        
+        <!-- Text & Branding -->
+        <div class="flex flex-col items-center gap-3">
+            <h2 class="text-xl font-extrabold text-slate-800 dark:text-white tracking-[0.15em]"><span data-i18n="pre-title">UU CSE</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500" data-i18n="pre-batch">67 E</span></h2>
+            
+            <div class="flex items-center gap-2.5">
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></div>
+                <p class="text-[10px] font-bold text-slate-500 dark:text-slate-400 tracking-[0.3em] uppercase" data-i18n="pre-init">Initializing Workspace</p>
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" style="animation-delay: 0.2s;"></div>
+            </div>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 w-full animate-load-bar rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Decorative Floating Orbs in Background (Aurora Effect) -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-blue-400/20 to-purple-500/20 filter blur-[60px] opacity-50 animate-drift pointer-events-none -z-10 hidden md:block"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-tr from-cyan-400/10 to-indigo-500/20 filter blur-[80px] opacity-40 animate-drift-slow pointer-events-none -z-10 hidden md:block"></div>
+    <div class="fixed top-[20%] left-[60%] w-[30vw] h-[30vw] rounded-full bg-gradient-to-bl from-pink-400/10 to-blue-500/10 filter blur-[50px] opacity-30 animate-blob pointer-events-none -z-10 hidden lg:block"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 animate-fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 sm:gap-4 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="https://erp.uttarauniversity.edu.bd/temp/assets/img/header_logo.png" alt="UU CSE Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3 drop-shadow-sm">
+                    <div class="flex flex-col justify-center mt-0.5">
+                        <h1 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-white tracking-tight leading-none transition-colors duration-300 group-hover:text-primary mb-1" data-i18n="nav-title">UU CSE 67 E</h1>
+                        <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold leading-none tracking-wide" data-i18n="nav-uni">Uttara University</p>
+                    </div>
+                </div>
+                <!-- Action Buttons & Theme Toggle -->
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Language Toggle Button -->
+                    <button id="lang-toggle" aria-label="Toggle Language" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 shadow-sm hover:shadow border border-slate-200 dark:border-slate-700 focus:outline-none hover:scale-105 active:scale-95" title="Toggle Language">
+                        <span id="lang-text" class="tracking-wide font-bold text-[10px] sm:text-sm">BN</span>
+                    </button>
+
+                    <!-- Light/Dark Mode Switcher Button -->
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-300 shadow-sm hover:shadow border border-slate-200 dark:border-slate-700 focus:outline-none hover:scale-105 active:scale-95" title="Toggle Theme">
+                        <i id="theme-icon" class="fa-solid fa-moon text-xs sm:text-base"></i>
+                    </button>
+                    
+                    <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Main%20Menu" target="_blank" rel="noopener noreferrer" class="hidden md:flex text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-slate-800 backdrop-blur-md border border-slate-200 dark:border-slate-700 px-5 py-2.5 rounded-full font-semibold transition-all hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-primary hover:border-blue-200 hover:-translate-y-0.5 items-center gap-2 shadow-sm btn-outline-pulse">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="nav-web">Open in Web</span>
+                    </a>
+                    
+                    <!-- Smart Mobile Icon / Desktop Full Button -->
+                    <a href="https://www.appsheet.com/newshortcut/4c016327-ba3c-45d6-abef-1b029d12acb2" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-600 via-primary to-indigo-700 text-white w-8 h-8 sm:w-auto sm:h-auto sm:px-7 sm:py-2.5 rounded-full font-bold transition-all shadow-[0_8px_20px_rgba(30,58,138,0.25)] hover:shadow-[0_12px_25px_rgba(59,130,246,0.35)] flex items-center justify-center gap-2 transform hover:-translate-y-1 btn-glow btn-shimmer z-10 text-[11px] sm:text-sm whitespace-nowrap border border-white/10">
+                        <i class="fa-solid fa-download text-[10px] sm:text-base"></i> 
+                        <span class="hidden sm:inline-block"><span data-i18n="nav-install">Install</span> <span data-i18n="nav-app">App</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="flex-grow pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 relative z-10">
+        
+        <!-- Left Content: Info -->
+        <div class="w-full lg:w-[50%] flex flex-col justify-center text-center lg:text-left relative z-10 lg:pt-6">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/90 dark:bg-slate-800 backdrop-blur-md border border-blue-100 dark:border-slate-700 text-blue-700 dark:text-blue-400 text-xs sm:text-sm font-bold tracking-wide uppercase w-max mx-auto lg:mx-0 mb-6 shadow-sm animate-fade-up delay-100">
+                <i class="fa-solid fa-graduation-cap text-blue-500 animate-pulse"></i>
+                <span data-i18n="hero-badge">Academic Portal</span>
+            </div>
+            
+            <h2 class="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6 animate-fade-up delay-200 tracking-tight">
+                <span data-i18n="hero-uni">Uttara University</span> <br class="mt-1 lg:mt-2">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 animate-gradient-text inline-block mt-2 lg:mt-3 drop-shadow-sm" data-i18n="hero-degree">B.Sc. in CSE</span>
+            </h2>
+            
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300 mb-6 border-l-4 border-primary pl-4 mx-auto lg:mx-0 w-fit animate-fade-up delay-300" data-i18n="hero-batch">
+                67th Evening Batch
+            </h3>
+            
+            <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6 animate-fade-up delay-400 font-medium" data-i18n="hero-desc">
+                The official academic hub for Uttara University's CSE 67th Batch (Evening). Access your student details, faculty profiles, class routines, course lists, and special notices seamlessly in one unified platform.
+            </p>
+            
+            <!-- Key Features Grid - All 11 Items with Neo-Glass and 3D Pop -->
+            <div class="grid grid-cols-1 min-[400px]:grid-cols-2 gap-4 mb-10 w-full relative z-20">
+                
+                <!-- 1. Student Details -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Student%20Details" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-400 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-blue-100/50 dark:bg-blue-900/30 p-1.5 border border-blue-200/50 dark:border-blue-800/50">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/student-3d-icon-png-download-10458307.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Student Details" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" data-i18n="card-1">Student Details</span>
+                </a>
+
+                <!-- 2. Faculty Members -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Faculty%20Members" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-500 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-green-100/50 dark:bg-green-900/30 p-1.5 border border-green-200/50 dark:border-green-800/50">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/teacher-3d-icon-png-download-11785877.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Faculty Members" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors" data-i18n="card-2">Faculty Members</span>
+                </a>
+
+                <!-- 3. Advisors -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Advisors" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-600 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-purple-100/50 dark:bg-purple-900/30 p-1.5 border border-purple-200/50 dark:border-purple-800/50">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/financial-advisor-3d-icon-png-download-11870127.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Advisors" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" data-i18n="card-3">Advisors</span>
+                </a>
+
+                <!-- 4. Class Routine -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Class%20Routine" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-700 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-yellow-100/50 dark:bg-yellow-900/30 p-1.5 border border-yellow-200/50 dark:border-yellow-800/50">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/013/866/229/small/schedule-3d-rendering-isometric-icon-png.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Class Routine" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors" data-i18n="card-4">Class Routine</span>
+                </a>
+
+                <!-- 5. Courses -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Courses" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-800 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-indigo-100/50 dark:bg-indigo-900/30 p-1.5 border border-indigo-200/50 dark:border-indigo-800/50">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/book-3d-icon-png-download-8786672.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Courses" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="card-5">Courses</span>
+                </a>
+
+                <!-- 6. Calendar -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Calender" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-900 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-pink-100/50 dark:bg-pink-900/30 p-1.5 border border-pink-200/50 dark:border-pink-800/50">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/calendar-3d-icon-png-download-12045751.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Calendar" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors" data-i18n="card-6">Calendar</span>
+                </a>
+
+                <!-- 7. Special Notices -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Notice" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-1000 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-orange-100/50 dark:bg-orange-900/30 p-1.5 border border-orange-200/50 dark:border-orange-800/50">
+                        <img src="https://static.vecteezy.com/system/resources/previews/010/872/317/original/3d-message-notification-icon-png.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Special Notices" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="card-7">Special Notices</span>
+                </a>
+
+                <!-- 8. Community -->
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Community" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-1000 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-teal-100/50 dark:bg-teal-900/30 p-1.5 border border-teal-200/50 dark:border-teal-800/50">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/066/199/841/small/3d-diverse-people-with-positive-icons-stars-hearts-thumbsup-for-customer-satisfaction-excellent-reviews-social-approval-community-engagement-vibrant-team-rating-png.png" class="w-full h-full object-contain icon-bounce drop-shadow-sm" alt="Community" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors" data-i18n="card-8">Community</span>
+                </a>
+
+                <!-- 9. MY UU - ERP -->
+                <a href="https://erp.uttara.ac.bd/" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-1100 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-slate-100/50 dark:bg-slate-800/50 p-1 border border-slate-300/50 dark:border-slate-700/50">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfopOvGcu2gVI0qmAEdFx3UWJNH_P6oAd2A&s" class="w-full h-full object-cover rounded-lg icon-bounce" alt="MY UU ERP" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-slate-900 dark:group-hover:text-white transition-colors" data-i18n="card-9">MY UU - ERP</span>
+                </a>
+
+                <!-- 10. UU Website -->
+                <a href="https://www.uttara.ac.bd/" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-1100 group">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-slate-100/50 dark:bg-slate-800/50 p-1 border border-slate-300/50 dark:border-slate-700/50">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfopOvGcu2gVI0qmAEdFx3UWJNH_P6oAd2A&s" class="w-full h-full object-cover rounded-lg icon-bounce" alt="UU Website" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-slate-900 dark:group-hover:text-white transition-colors" data-i18n="card-10">UU Website</span>
+                </a>
+
+                <!-- 11. App User Only - TG -->
+                <a href="https://t.me/UUCSE67" target="_blank" rel="noopener noreferrer" class="glass-card flex items-center gap-4 p-4 rounded-2xl animate-fade-up delay-1200 group min-[400px]:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-1 border-blue-400/30">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-cyan-100/50 dark:bg-cyan-900/30 p-1 border border-cyan-200/50 dark:border-cyan-800/50">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieD9-5CaXiCD_Gaj7xGth2lYEI9RPBkZvF9WnE7rDzi0vXrvOOXHfkYFWDtvgwnHZ8wW60dlICJRb0WZGKv-pTLPlzBgZ2gHxHTx9NqU4sme4IoRPZMaaHyxa4p-XffSIdSLWPUp2behIWnMtkVCeNoA8KwY-KcT9BtH-dyNRPF45rJPMEdMFEt3WhHxI/s320/Untitled-1.png" class="w-full h-full object-cover rounded-lg icon-bounce drop-shadow-md" alt="Telegram" loading="lazy" decoding="async">
+                    </div>
+                    <span class="font-bold text-slate-700 dark:text-slate-300 text-sm group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors" data-i18n="card-11">App User Only - TG</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Action Buttons -->
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center lg:justify-start w-full animate-fade-up delay-1200">
+                <a href="https://www.appsheet.com/newshortcut/4c016327-ba3c-45d6-abef-1b029d12acb2" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-r from-blue-700 via-primary to-indigo-800 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold transition-all shadow-[0_10px_25px_rgba(30,58,138,0.3)] hover:shadow-[0_15px_35px_rgba(30,58,138,0.4)] flex items-center justify-center gap-3 text-base sm:text-lg btn-glow btn-shimmer z-10 hover:-translate-y-1.5 border border-white/10">
+                    <i class="fa-solid fa-download text-xl"></i> <span data-i18n="btn-mobile">Install on Mobile</span>
+                </a>
+                
+                <a href="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2#view=Main%20Menu" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white/90 dark:bg-slate-800 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-blue-300 text-slate-800 dark:text-slate-100 hover:text-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-3 text-base sm:text-lg shadow-sm hover:-translate-y-1.5 hover:shadow-[0_10px_25px_rgba(59,130,246,0.15)] btn-outline-pulse">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i> <span data-i18n="nav-web">Open in Web</span>
+                </a>
+                
+                <!-- View App Below (Only Mobile) -->
+                <a href="#app-preview" class="w-full sm:w-auto bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-500 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-800 dark:hover:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-3 text-base sm:text-lg lg:hidden hover:-translate-y-1 mt-2 sm:mt-0">
+                    <i class="fa-solid fa-chevron-down text-lg animate-bounce"></i> <span data-i18n="btn-view">View App Below</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Content: Static App Embed -->
+        <div id="app-preview" class="w-full lg:w-[45%] flex flex-col items-center lg:items-end mt-16 lg:mt-0 animate-fade-up delay-500 relative">
+            
+            <!-- Mockup Container -->
+            <div class="relative w-full flex justify-center lg:justify-end perspective-1000">
+                
+                <!-- Decorative background glowing blob (Animated) -->
+                <div class="animate-blob absolute top-1/2 left-1/2 w-[130%] h-[130%] bg-gradient-to-tr from-blue-400/20 via-indigo-300/20 to-cyan-300/20 rounded-[40%_60%_70%_30%] blur-[60px] -z-10 pointer-events-none hidden md:block"></div>
+                
+                <!-- The Device Frame (Premium iPhone Style with Dynamic Island & Glare) -->
+                <div class="device-frame flex flex-col p-2.5 sm:p-3 md:p-3.5 rounded-[2.5rem] sm:rounded-[3rem] relative z-10 overflow-hidden w-full max-w-[360px] mx-auto lg:ml-auto lg:mr-0 h-[640px] sm:h-[700px] max-h-[85vh]">
+
+                    <!-- Hardware Buttons (Realistic Detail) -->
+                    <div class="absolute top-[100px] -left-[3px] w-[3px] h-[25px] bg-[#2a2d36] dark:bg-[#111] rounded-l-md shadow-sm border-y border-white/10 z-0"></div> <!-- Silent Switch -->
+                    <div class="absolute top-[150px] -left-[3px] w-[3px] h-[55px] bg-[#2a2d36] dark:bg-[#111] rounded-l-md shadow-sm border-y border-white/10 z-0"></div> <!-- Vol Up -->
+                    <div class="absolute top-[220px] -left-[3px] w-[3px] h-[55px] bg-[#2a2d36] dark:bg-[#111] rounded-l-md shadow-sm border-y border-white/10 z-0"></div> <!-- Vol Down -->
+                    <div class="absolute top-[170px] -right-[3px] w-[3px] h-[80px] bg-[#2a2d36] dark:bg-[#111] rounded-r-md shadow-sm border-y border-white/10 z-0"></div> <!-- Power Button -->
+
+                    <!-- Premium Dynamic Island -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2 h-7 w-[120px] bg-black rounded-full z-20 flex justify-between items-center px-3 shadow-[0_4px_10px_rgba(0,0,0,0.5)] border border-[#333] select-none">
+                        <!-- Left Breathing Lens -->
+                        <div class="w-2.5 h-2.5 bg-[#0a0a0a] rounded-full border border-[#222] shadow-[inset_0_0_2px_rgba(255,255,255,0.1)] relative overflow-hidden shrink-0">
+                            <div class="absolute top-0.5 right-0.5 w-1.5 h-1.5 bg-blue-500 rounded-full blur-[1.5px] animate-lens"></div>
+                        </div>
+                        
+                        <!-- Interactive App Refresh Trigger Inside Dynamic Island -->
+                        <button onclick="refreshIframe()" class="hover:scale-110 active:scale-95 text-[10px] text-blue-400 font-bold hover:text-blue-300 transition-all flex items-center gap-1 focus:outline-none rounded-sm relative z-40" title="Reload Portal">
+                            <i class="fa-solid fa-rotate-right text-[8px] animate-pulse"></i> <span>Reload</span>
+                        </button>
+                    </div>
+                    
+                    <!-- App Container -->
+                    <div class="bg-white w-full flex-grow rounded-[2rem] sm:rounded-[2.4rem] overflow-hidden relative shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] z-10">
+                        
+                        <!-- Loading Indicator -->
+                        <div id="iframe-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-800 z-10 text-slate-400 transition-opacity duration-700 ease-in-out">
+                            <i class="fa-solid fa-circle-notch fa-spin text-4xl mb-4 text-primary dark:text-blue-400"></i>
+                            <p class="font-medium animate-pulse tracking-wide text-sm uppercase" data-i18n="iframe-load">Loading Portal...</p>
+                        </div>
+                        
+                        <!-- The AppSheet Iframe -->
+                        <iframe 
+                            id="app-iframe"
+                            onload="document.getElementById('iframe-loader').classList.add('opacity-0', 'pointer-events-none')"
+                            src="https://www.appsheet.com/start/4c016327-ba3c-45d6-abef-1b029d12acb2" 
+                            class="absolute inset-0 w-full h-full border-0 z-0 bg-white"
+                            title="UU CSE 67 E App"
+                            allow="geolocation; microphone; camera"
+                        ></iframe>
+                    </div>
+                    
+                    <!-- Bottom Home Bar -->
+                    <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 h-1.5 w-1/3 bg-white/30 backdrop-blur-sm rounded-full shrink-0 z-20 pointer-events-none"></div>
+                </div>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/60 dark:bg-slate-900/60 backdrop-blur-lg border-t border-slate-200/50 dark:border-slate-800/50 py-8 md:py-10 mt-auto relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.02)] transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+            
+            <!-- Left Side: Logo, Branding & Copyright -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <img src="https://erp.uttarauniversity.edu.bd/temp/assets/img/header_logo.png" alt="Logo" class="h-10 sm:h-11 w-auto relative z-10 opacity-80 grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105">
+                </div>
+                <div class="flex flex-col gap-0.5">
+                    <p class="text-slate-600 dark:text-slate-300 font-semibold text-sm tracking-wide transition-colors group-hover:text-primary" data-i18n="foot-copy">© 2026 UU CSE 67 E. All rights reserved.</p>
+                    <p class="text-[11px] text-slate-400 dark:text-slate-500 font-medium" data-i18n="foot-deg">B.Sc. in Computer Science & Engineering (Evening)</p>
+                </div>
+            </div>
+            
+            <!-- Right Side: Premium Developed-By Profile Badge -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-end mt-4 md:mt-0">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider" data-i18n="foot-dev">Developed by</span>
+                <a href="https://ihshamim.pro.bd/" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center gap-3 font-semibold text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 pr-5 pl-1.5 py-1.5 rounded-full hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:border-transparent transition-all duration-500 cursor-pointer shadow-sm hover:shadow-[0_10px_20px_rgba(59,130,246,0.25)] hover:-translate-y-1">
+                    
+                    <!-- Profile Picture with Glow and Online Dot -->
+                    <div class="relative">
+                        <!-- Background Pulse Glow -->
+                        <div class="absolute inset-0 bg-blue-500 rounded-full blur-[6px] opacity-40 group-hover:opacity-80 transition-opacity animate-pulse"></div>
+                        <!-- Profile Image -->
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJYAy8X2dDvxxHZE9wXlhwLCezWxRZaqYN8pdu2TpEVi-j6rU_X2pbto83yy3jGF6AQ6t4a_3IeUU17tamiutUIUZldhWzvJOah8L-gemG3CFgg52VNE4ZVKxTpzwYODDuBhWG5MmNhxpbdav5YAU3TuzcV6B_PPcN_FIiZmpqQ6qs3-0/s1600/IH%20Shamim%20-%20Passport%20Size%20Photo_20250825_104114_0000.png" alt="IH Shamim" loading="lazy" class="w-8 h-8 rounded-full object-cover border-2 border-white dark:border-slate-800 relative z-10 group-hover:scale-105 transition-transform duration-300 bg-slate-100">
+                        <!-- Active Green Dot -->
+                        <span class="absolute bottom-0 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full z-20"></span>
+                    </div>
+                    
+                    <!-- Developer Name -->
+                    <span class="text-sm tracking-wide font-bold" data-i18n="foot-name">Shamim - 1123 (IH Shamim)</span>
+                    
+                    <!-- Animated Arrow -->
+                    <i class="fa-solid fa-arrow-right-long text-blue-500 dark:text-blue-400 text-sm group-hover:text-white transition-all duration-300 transform group-hover:translate-x-1 opacity-70 group-hover:opacity-100 ml-1"></i>
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" aria-label="Scroll to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-50 bg-gradient-to-t from-blue-700 to-indigo-600 text-white w-12 h-12 rounded-full shadow-[0_8px_20px_rgba(30,58,138,0.3)] flex items-center justify-center opacity-0 translate-y-10 transition-all duration-500 hover:shadow-[0_12px_25px_rgba(30,58,138,0.5)] hover:-translate-y-1 pointer-events-none group">
+        <i class="fa-solid fa-arrow-up transform group-hover:-translate-y-1 transition-transform duration-300"></i>
+    </button>
+
+    <!-- Scripts for Preloader, Dark Mode, Reload iframe, ScrollTop, Translation -->
+    <script>
+        // --- 0. Preloader Implementation ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 200);
+        });
+
+        // --- 1. Dark Mode Theme Toggle Implementation ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            themeIcon.className = "fa-solid fa-moon text-xs sm:text-base";
+        } else {
+            document.documentElement.classList.add('dark');
+            themeIcon.className = "fa-solid fa-sun text-xs sm:text-base";
+            if (!localStorage.getItem('color-theme')) {
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeIcon.className = "fa-solid fa-moon text-xs sm:text-base";
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeIcon.className = "fa-solid fa-sun text-xs sm:text-base";
+            }
+        });
+
+        // --- 2. Interactive App Refresh Function ---
+        function refreshIframe() {
+            const iframe = document.getElementById('app-iframe');
+            const loader = document.getElementById('iframe-loader');
+            if (iframe) {
+                loader.classList.remove('opacity-0', 'pointer-events-none');
+                const src = iframe.src;
+                iframe.src = '';
+                setTimeout(() => {
+                    iframe.src = src;
+                }, 100);
+            }
+        }
+
+        // --- 3. Scroll to Top Button Logic ---
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                scrollToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+
+        // --- 4. Language Translation Logic ---
+        const i18nData = {
+            'pre-title': { en: 'UU CSE', bn: 'ইউইউ সিএসই' },
+            'pre-batch': { en: '67 E', bn: '৬৭ ই' },
+            'pre-init': { en: 'Initializing Workspace', bn: 'ওয়ার্কস্পেস প্রস্তুত হচ্ছে' },
+            'nav-title': { en: 'UU CSE 67 E', bn: 'ইউইউ সিএসই ৬৭ ই' },
+            'nav-uni': { en: 'Uttara University', bn: 'উত্তরা বিশ্ববিদ্যালয়' },
+            'nav-web': { en: 'Open in Web', bn: 'ওয়েবে খুলুন' },
+            'nav-install': { en: 'Install', bn: 'ইনস্টল' },
+            'nav-app': { en: 'App', bn: 'অ্যাপ' },
+            'hero-badge': { en: 'Academic Portal', bn: 'একাডেমিক পোর্টাল' },
+            'hero-uni': { en: 'Uttara University', bn: 'উত্তরা বিশ্ববিদ্যালয়' },
+            'hero-degree': { en: 'B.Sc. in CSE', bn: 'বি.এস.সি ইন সিএসই' },
+            'hero-batch': { en: '67th Evening Batch', bn: '৬৭তম ইভিনিং ব্যাচ' },
+            'hero-desc': { en: 'The official academic hub for Uttara University\'s CSE 67th Batch (Evening). Access your student details, faculty profiles, class routines, course lists, and special notices seamlessly in one unified platform.', bn: 'উত্তরা বিশ্ববিদ্যালয়ের সিএসই ৬৭তম ব্যাচের (ইভিনিং) অফিসিয়াল একাডেমিক পোর্টাল। এখানে আপনার বিবরণ, শিক্ষক পরিচিতি, ক্লাস রুটিন, কোর্সের তালিকা এবং বিশেষ নোটিশ সহ সকল গুরুত্বপূর্ণ তথ্য একটি প্ল্যাটফর্মেই সহজে পাবেন।' },
+            
+            // New 11 Grid Items
+            'card-1': { en: 'Student Details', bn: 'শিক্ষার্থীর বিবরণ' },
+            'card-2': { en: 'Faculty Members', bn: 'শিক্ষক পরিচিতি' },
+            'card-3': { en: 'Advisors', bn: 'উপদেষ্টামণ্ডলী' },
+            'card-4': { en: 'Class Routine', bn: 'ক্লাস রুটিন' },
+            'card-5': { en: 'Courses', bn: 'কোর্সসমূহ' },
+            'card-6': { en: 'Calendar', bn: 'ক্যালেন্ডার' },
+            'card-7': { en: 'Special Notices', bn: 'বিশেষ নোটিশ' },
+            'card-8': { en: 'Community', bn: 'কমিউনিটি' },
+            'card-9': { en: 'MY UU - ERP', bn: 'মাই ইউইউ - ইআরপি' },
+            'card-10': { en: 'UU Website', bn: 'ইউইউ ওয়েবসাইট' },
+            'card-11': { en: 'App User Only - TG', bn: 'অ্যাপ ইউজার - টেলিগ্রাম' },
+            
+            'btn-mobile': { en: 'Install on Mobile', bn: 'মোবাইলে ইনস্টল করুন' },
+            'btn-view': { en: 'View App Below', bn: 'নিচে অ্যাপ দেখুন' },
+            'iframe-load': { en: 'Loading Portal...', bn: 'পোর্টাল লোড হচ্ছে...' },
+            'foot-copy': { en: '© 2026 UU CSE 67 E. All rights reserved.', bn: '© ২০২৬ ইউইউ সিএসই ৬৭ ই। সর্বস্বত্ব সংরক্ষিত।' },
+            'foot-deg': { en: 'B.Sc. in Computer Science & Engineering (Evening)', bn: 'বি.এস.সি ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (ইভিনিং)' },
+            'foot-dev': { en: 'Developed by', bn: 'ডেভেলপার:' },
+            'foot-name': { en: 'Shamim - 1123 (IH Shamim)', bn: 'শামীম - ১১২৩ (IH Shamim)' }
+        };
+
+        const langToggleBtn = document.getElementById('lang-toggle');
+        let currentLang = localStorage.getItem('app-lang') || 'en';
+
+        function applyLanguage(lang) {
+            const langTextSpan = document.getElementById('lang-text');
+            if(lang === 'bn') {
+                document.body.classList.add('font-bangla');
+                if(langTextSpan) langTextSpan.textContent = 'EN';
+            } else {
+                document.body.classList.remove('font-bangla');
+                if(langTextSpan) langTextSpan.textContent = 'BN';
+            }
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(i18nData[key] && i18nData[key][lang]) {
+                    if (el.tagName === 'SPAN' && el.innerHTML.includes('<br>')) {
+                         el.innerHTML = i18nData[key][lang];
+                    } else {
+                        el.textContent = i18nData[key][lang];
+                    }
+                }
+            });
+            
+            localStorage.setItem('app-lang', lang);
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'bn' : 'en';
+            applyLanguage(currentLang);
+        });
+
+        applyLanguage(currentLang);
+        
+    </script>
+</body>
+</html>
